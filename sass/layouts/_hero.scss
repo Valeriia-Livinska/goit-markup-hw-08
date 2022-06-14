@@ -92,7 +92,6 @@
     transform: translate(-50%, -50%) scale(1);
     padding: 40px;
     
-    min-width: 450px;
     height: 609px;
     
     text-align: left;
@@ -102,6 +101,14 @@
     
     transition: transform var(--transition-duration) var(--cubic-bezier);
 
+    @media screen and (max-width:479px){
+        width: 100%;
+    }
+
+    @include mq(mobile){
+        min-width: 450px;
+    }
+    
     @include mq(desktop){
         min-width: 528px;
         height: 581px;

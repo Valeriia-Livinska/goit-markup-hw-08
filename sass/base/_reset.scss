@@ -1,0 +1,29 @@
+/*Сброс стилей для заголовков, параграфов и списков*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Сброс стилей для изображений*/
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/*Убирает все иконки списка*/
+.list {
+    list-style: none;
+}
+
+.link {
+    text-decoration: none;
+    display: inline-block;
+}

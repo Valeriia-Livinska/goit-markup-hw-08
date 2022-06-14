@@ -1,0 +1,226 @@
+/*---- Футер ----*/
+.footer {
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    background-color: var(--dark-bg);
+}
+
+.footer-position {
+    @media screen and (max-width:1199px){
+        text-align: center;
+    }
+    
+    @include mq(desktop){
+        display: flex;
+        align-items: baseline;
+    }
+}
+
+.footer-position-tablet {
+    @include mq(tablet){
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+
+        margin-bottom: 60px;
+    }
+
+    @include mq(desktop){
+        margin-bottom: 0;
+    }
+}
+
+.position-address {
+    margin-bottom: 60px;
+
+    @include mq(tablet){
+        margin-right: 165px;
+        margin-bottom: 0;
+    }
+
+    @include mq(desktop){
+        margin-right: 70px;
+    }
+}
+
+.footer-address {
+    margin-top: 20px;
+
+    font-style: normal;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+    color: #FFFFFF;
+}
+
+.address-txt {
+    margin-bottom: 8px;
+
+    @include mq(desktop){
+        margin-bottom: 9px;
+    }
+}
+
+.footer-contacts__item:not(:last-child) {
+    margin-bottom: 8px;
+
+    @include mq(desktop){
+        margin-bottom: 9px;
+    }
+}
+
+.footer-contacts__link {
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+
+    transition: color var(--transition-duration) var(--cubic-bezier);
+
+    &:hover,
+    &:focus {
+        color: var(--accent-color);
+    }
+}
+
+
+/*---- Соц сети в футер ----*/
+.position-socials {
+    margin-bottom: 60px;
+    
+    @include mq(tablet){
+        margin-bottom: 0;
+    }
+}
+
+.join {
+    margin-bottom: 20px;
+
+    font-weight: 700;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.footer-socials-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    list-style: none;
+}
+
+.footer-socials-item:not(:last-child) {
+    margin-right: 10px;
+}
+
+.footer-socials-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 44px;
+    height: 44px;
+
+    color: #FFFFFF;
+
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    text-decoration: none;
+
+    transition: background-color var(--transition-duration) var(--cubic-bezier);
+
+    &:hover,
+    &:focus {
+        background-color: var(--accent-color);
+        }
+}
+
+.footer-socials-icon {
+    fill: currentColor;
+}
+
+
+
+/* ---- Подписаться в футере ----*/
+
+.position-subscribe {
+
+    @include mq(desktop){
+        margin-left: auto;
+    }
+}
+
+.subscribe-title {
+    margin-bottom: 20px;
+
+    font-weight: 700;
+    line-height: 1.14;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.form-subscribe {
+
+    @include mq(desktop){
+        display: flex;
+        align-items: center;
+    }
+}
+
+.input-mail-subscribe {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 16px;
+    margin-bottom: 20px;
+    
+    max-width: 450px;
+    width: 100%;
+    
+    font-size: 16px;
+    line-height: 1.25;
+    letter-spacing: 0.03em;
+    color: rgb(255, 255, 255);
+    
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+    border-radius: 4px;
+    background-color: transparent;
+    outline: transparent;
+    
+    transition: border var(--transition-duration) var(--cubic-bezier);
+    
+    &:hover,
+    &:focus {
+        border: 1px solid var(--accent-color);
+    }
+    
+    &::placeholder {
+        font-size: 16px;
+        line-height: 1.25;
+        letter-spacing: 0.03em;
+        color: rgba(255, 255, 255, 0.6);
+    }
+    
+    @include mq(desktop){
+        margin-right: 12px;
+        margin-bottom: 0px;
+
+        width: 358px;
+    }
+}
+
+.btn-subscribe {
+    padding: 10px 29px;
+}
+
+.btn-subscribe-text {
+    display: flex;
+    align-items: center;
+    font-weight: 700;
+}
+
+.icon-subscribe {
+    margin-left: 10px;
+    fill: currentColor;
+}

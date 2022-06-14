@@ -1,0 +1,24 @@
+:root {
+
+    /*text parameters*/
+    --main-text-style: 'Roboto', sans-serif;
+    --main-font-size: 14px;
+    --main-text-color: #757575;
+    --secondary-text-color: #212121;
+
+    /*background color*/
+    --dark-bg: #2F303A;
+    --light-bg: #F5F4FA;
+    --hero-bg: #C4C4C4;
+
+    /*icon parameters*/
+    --icons-cl: #AFB1B8;
+
+    /*accent parameters*/
+    --accent-color: #2196F3;
+    --accent-btn-color: #188CE8;
+
+    /*css переходы*/
+    --transition-duration: 250ms;
+    --cubic-bezier: cubic-bezier(0.4, 0, 0.2, 1);
+}

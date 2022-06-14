@@ -1,0 +1,62 @@
+/*---- Секция особенности ----*/
+
+/* Позиционирование секции Особенности */
+.features__list {
+
+    @include mq(tablet) {
+        display: flex;
+        flex-wrap: wrap;
+        margin: -15px;
+    }
+}
+
+.features__item {
+    @media screen and (max-width:767px){
+        max-width: 450px;
+        width: 100%;
+
+        &:not(:last-child) {
+            margin-bottom: 30px;
+        }
+    }
+
+    @include mq(tablet){
+        flex-basis: calc((100% - (4 * 15px)) / 2);
+        margin: 15px;
+    }
+
+    @include mq(desktop){
+        flex-basis: calc((100% - (8 * 15px))/ 4);
+    }
+}
+
+/* Иконки секции Особенности*/
+.features__icon-thumb {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+
+    height: 120px;
+
+    background: var(--light-bg);
+    border-radius: 4px;
+}
+
+.features__subtitle {
+    margin-bottom: 10px;
+
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.14;
+    text-transform: uppercase;
+    color: var(--secondary-text-color);
+
+    @media screen and (max-width:767px){
+        text-align: center;
+    }
+}
+
+.features__item-desc {
+    line-height: 1.71;   
+}

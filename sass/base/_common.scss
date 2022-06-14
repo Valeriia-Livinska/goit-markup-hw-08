@@ -1,0 +1,39 @@
+body {
+    font-family: var(--main-text-style);
+    font-size: var(--main-font-size);
+    letter-spacing: 0.03em;
+    color: var(--main-text-color);
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+/* Общее позиционирование секций */
+.section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    @include mq(desktop){
+        padding-top: 94px;
+        padding-bottom: 94px;
+    }
+}
+
+/* Заголовки секций*/
+.section-title {
+    margin-bottom: 30px;
+    
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 1.17;
+    text-align: center;
+    color: var(--secondary-text-color);
+    
+
+    @include mq(desktop){
+        margin-bottom: 50px;
+
+        font-size: 36px;
+    }
+}

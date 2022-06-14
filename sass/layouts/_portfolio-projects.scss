@@ -1,0 +1,85 @@
+/*---- Список проектов в Портфолио ----*/
+.project-list {
+    display: flex;
+    flex-wrap: wrap;
+
+    margin-left: -30px;
+    margin-bottom: -30px;
+}
+
+/* Для легкого изменения кол-ва проектов в строке*/
+.project-list>.item {
+    margin-left: 30px;
+    margin-bottom: 30px;
+
+    flex-basis: calc((100% / 3) - 30px);
+}
+
+.project-card {
+    display: block;
+
+    text-decoration: none;
+
+    transition: box-shadow var(--transition-duration) var(--cubic-bezier);
+
+    &:hover,
+    &:focus {
+        box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+    }
+
+    &:hover .overlay,
+    &:focus .overlay {
+        transform: translateY(-100%);
+        opacity: 1;
+        }
+}
+
+.overlay-container {
+    position: relative;
+    overflow: hidden;
+}
+
+.overlay {
+    position: absolute;
+    padding: 63px 24px;
+
+    width: 100%;
+    opacity: 0;
+
+    font-size: 18px;
+    line-height: 1.56;
+    letter-spacing: 0.03em;
+    color: #FFFFFF;
+
+    background-color: rgba(33, 150, 243, 0.9);
+    transform: translateY(0);
+    transition: transform var(--transition-duration) var(--cubic-bezier),
+        opacity var(--transition-duration) var(--cubic-bezier);
+}
+
+.project-description {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 24px;
+    padding-right: 24px;
+
+    border: 1px solid #EEEEEE;
+    border-top: none;
+}
+
+.project-title {
+    margin-bottom: 4px;
+
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 2;
+    letter-spacing: 0.06em;
+    color: var(--secondary-text-color);
+}
+
+.project-filter-part {
+    font-size: 16px;
+    line-height: 1.88;
+    letter-spacing: 0.03em;
+    color: var(--main-text-color);
+}

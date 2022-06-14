@@ -1,0 +1,112 @@
+/*---- Секция Наша команда ----*/
+.team {
+    background-color: var(--light-bg);
+}
+
+.team .list {
+
+    @include mq(tablet){
+        display: flex;
+        flex-wrap: wrap;
+    
+        margin: -15px;
+    }
+}
+
+.team .item {
+    max-width: 450px;
+    width: 100%;
+
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 0px 0px 4px 4px;
+    overflow: hidden;
+    
+    @media screen and (max-width:767px){
+        &:not(:last-child){
+        margin-bottom: 30px;
+        }
+    }
+
+    @include mq(tablet){
+        flex-basis: calc((100% - (4 * 15px))/ 2);
+        margin: 15px;
+    }
+
+    @include mq(desktop){
+        flex-basis: calc((100% - (8 * 15px))/ 4);
+    }
+}
+
+.member-description {
+    padding-top: 30px;
+    padding-bottom: 24px;
+    padding-left: 5px;
+    padding-right: 5px;
+    
+    text-align: center;
+    background-color: #FFFFFF;
+
+    @include mq(desktop){
+        padding-bottom: 30px;
+    }
+}
+
+.member {
+    margin-bottom: 10px;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.19;
+    color: var(--secondary-text-color);
+}
+
+.member-position {
+    margin-bottom: 16px;
+
+    font-size: 16px;
+    line-height: 1.19;
+}
+
+.member-socials-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    list-style: none;
+}
+
+.member-socials-item:not(:last-child) {
+    margin-right: 10px;
+}
+
+.member-socials-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 44px;
+    height: 44px;
+
+    color: var(--icons-cl);
+    text-decoration: none;
+    border-radius: 50%;
+
+    transition: background-color var(--transition-duration) var(--cubic-bezier);
+
+    &:hover,
+    &:focus {
+        background-color: var(--accent-color);
+        }
+
+    &:hover .member-socials-icon,
+    &:focus .member-socials-icon {
+        fill: #FFFFFF;
+        }
+}
+
+.member-socials-icon {
+    fill: currentColor;
+
+    transition: fill var(--transition-duration) var(--cubic-bezier);
+}
+

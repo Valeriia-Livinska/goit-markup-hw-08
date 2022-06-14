@@ -199,7 +199,6 @@ img {
   background-color: transparent;
   color: #000000;
   cursor: pointer;
-  z-index: 10;
   -webkit-transition: color var(--transition-duration) var(--cubic-bezier);
   transition: color var(--transition-duration) var(--cubic-bezier);
 }
@@ -208,28 +207,32 @@ img {
   color: var(--accent-color);
 }
 
-.menu-btn.is-open .icon-menu-close {
-  display: block;
+.menu-btn:hover .icon-menu-open,
+.menu-btn:focus .icon-menu-open {
+  fill: currentColor;
 }
 
-.menu-btn.is-open .icon-menu-open {
-  display: none;
+@media screen and (min-width: 768px) {
+  .menu-btn {
+    display: none;
+  }
 }
 
 .icon-menu-open {
-  fill: currentColor;
+  -webkit-transition: fill var(--transition-duration) var(--cubic-bezier);
+  transition: fill var(--transition-duration) var(--cubic-bezier);
 }
 
 .icon-menu-close {
-  display: none;
-  fill: currentColor;
+  -webkit-transition: fill var(--transition-duration) var(--cubic-bezier);
+  transition: fill var(--transition-duration) var(--cubic-bezier);
 }
 
 .menu {
   position: fixed;
   top: 0;
   left: 0;
-  height: 100%;
+  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -255,9 +258,27 @@ img {
           transform: translateX(0);
 }
 
+.menu .menu-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  color: #000000;
+  -webkit-transition: color var(--transition-duration) var(--cubic-bezier);
+  transition: color var(--transition-duration) var(--cubic-bezier);
+}
+
+.menu .menu-btn:hover, .menu .menu-btn:focus {
+  color: var(--accent-color);
+}
+
+.menu .menu-btn:hover .icon-menu-close,
+.menu .menu-btn:focus .icon-menu-close {
+  fill: currentColor;
+}
+
 @media screen and (max-width: 767px) {
   .menu {
-    width: 100%;
+    width: 100vw;
   }
 }
 
@@ -560,7 +581,6 @@ img {
 /* layouts */
 /*---- Секиця Header ----*/
 .header {
-  position: relative;
   border-bottom: 1px solid #ECECEC;
 }
 
@@ -568,17 +588,23 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @media screen and (max-width: 767px) {
   .header-container {
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
     min-height: 60px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .header-logo {
+    margin-right: 88px;
   }
 }
 
@@ -604,7 +630,7 @@ img {
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 768px) {
   .nav__list {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -657,11 +683,28 @@ img {
   }
 }
 
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 768px) {
   .header-contacts {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    margin-left: auto;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .header-contacts {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -670,7 +713,14 @@ img {
 }
 
 .header-contacts__item:not(:last-child) {
-  margin-right: 50px;
+  margin-bottom: 10px;
+}
+
+@media screen and (min-width: 1200px) {
+  .header-contacts__item:not(:last-child) {
+    margin-right: 30px;
+    margin-bottom: 0;
+  }
 }
 
 .header-contacts__link {
@@ -699,8 +749,25 @@ img {
 
 /*Цвет иконок при hover-focus*/
 .header-contacts__icon {
-  margin-right: 10px;
+  margin-right: 8px;
   fill: currentColor;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .header-contacts__icon--env {
+    width: 14px;
+    height: 10px;
+  }
+  .header-contacts__icon--tel {
+    width: 10px;
+    height: 14px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .header-contacts__icon {
+    margin-right: 10px;
+  }
 }
 
 /*---- Секция Герой ----*/
@@ -1447,14 +1514,35 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  margin-bottom: 50px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
-.button-list > .item + .item {
-  margin-left: 8px;
+@media screen and (max-width: 767px) {
+  .button-list {
+    row-gap: 15px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .button-list {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .button-list {
+    margin-bottom: 50px;
+  }
+}
+
+.button-list > .item:not(:last-child) {
+  margin-right: 8px;
 }
 
 .portfolio-btn {
@@ -1493,21 +1581,44 @@ img {
 
 /*---- Список проектов в Портфолио ----*/
 .project-list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  margin-left: -30px;
-  margin-bottom: -30px;
+  margin-top: 40px;
 }
 
-/* Для легкого изменения кол-ва проектов в строке*/
+@media screen and (min-width: 768px) {
+  .project-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    margin: -15px;
+  }
+}
+
 .project-list > .item {
-  margin-left: 30px;
-  margin-bottom: 30px;
-  -ms-flex-preferred-size: calc((100% / 3) - 30px);
-      flex-basis: calc((100% / 3) - 30px);
+  width: 100%;
+  max-width: 450px;
+}
+
+@media screen and (max-width: 767px) {
+  .project-list > .item:not(:last-child) {
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .project-list > .item {
+    margin: 15px;
+    -ms-flex-preferred-size: calc((100% - (2 * 30px)) / 2);
+        flex-basis: calc((100% - (2 * 30px)) / 2);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .project-list > .item {
+    -ms-flex-preferred-size: calc((100% / 3) - 30px);
+        flex-basis: calc((100% / 3) - 30px);
+  }
 }
 
 .project-card {
@@ -1531,15 +1642,30 @@ img {
   opacity: 1;
 }
 
+@media screen and (min-width: 767px) and (max-width: 1199px) {
+  .project-card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: 100%;
+  }
+}
+
 .overlay-container {
   position: relative;
   overflow: hidden;
+  width: 100%;
 }
 
 .overlay {
   position: absolute;
   padding: 63px 24px;
   width: 100%;
+  height: 100%;
   opacity: 0;
   font-size: 18px;
   line-height: 1.56;
@@ -1561,6 +1687,14 @@ img {
   padding-right: 24px;
   border: 1px solid #EEEEEE;
   border-top: none;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .project-description {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+  }
 }
 
 .project-title {

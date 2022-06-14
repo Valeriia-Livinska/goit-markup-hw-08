@@ -1,20 +1,22 @@
 /*---- Секиця Header ----*/
 .header {
-    position: relative;
     border-bottom: 1px solid #ECECEC;
 }
 
 .header-container {
     display: flex;
-    
+    align-items: center;
+
     @media screen and (max-width:767px){
-        align-items: center;
         justify-content: space-between;
         min-height: 60px;
     }
 }
 
 .header-logo {
+    @include mq(tablet){
+        margin-right: 88px;
+    }
 
     @include mq(desktop){
         margin-right: 93px;
@@ -33,10 +35,6 @@
     }
 
     @include mq(tablet){
-
-    }
-
-    @include mq(desktop){
         display: flex;
     }
 }
@@ -92,18 +90,26 @@
     }
 
     @include mq(tablet){
-
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: auto;
     }
 
     @include mq(desktop){
-        display: flex;
+        flex-direction: row;
         align-items: center;
         margin-left: auto;
     }
 }
 
 .header-contacts__item:not(:last-child) {
-    margin-right: 50px;
+    margin-bottom: 10px;
+
+    @include mq(desktop){
+        margin-right: 30px;
+        margin-bottom: 0;
+    }
 }
 
 .header-contacts__link {
@@ -124,13 +130,27 @@
     &:focus {
             color: var(--accent-color);
         }
-
 }
 
 /*Цвет иконок при hover-focus*/
 
 .header-contacts__icon {
-    margin-right: 10px;
+    margin-right: 8px;
 
     fill: currentColor;
+
+    @media screen and (min-width:768px) and (max-width:1199px){
+    &--env{
+        width: 14px;
+        height: 10px;
+    }
+    &--tel {
+        width: 10px;
+        height: 14px;
+    }
+    }
+
+    @include mq(desktop){
+        margin-right: 10px;
+    }
 }

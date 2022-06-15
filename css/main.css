@@ -785,13 +785,12 @@ img {
   padding-bottom: 118px;
   margin-left: auto;
   margin-right: auto;
-  max-width: 480px;
   min-height: 400px;
   text-align: center;
   color: #FFFFFF;
   background-color: var(--hero-bg);
-  background-image: url(../images/hero/hero_mob.jpg), -webkit-gradient(linear, left top, left bottom, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4)));
-  background-image: url(../images/hero/hero_mob.jpg), linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4));
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url(../images/hero/hero_mob.jpg);
+  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero/hero_mob.jpg);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -799,23 +798,22 @@ img {
 
 @media (min-device-pixel-ratio: 2), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
   .hero {
-    background-image: url(../images/hero/hero_mob@2x.jpg), -webkit-gradient(linear, left top, left bottom, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4)));
-    background-image: url(../images/hero/hero_mob@2x.jpg), linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4));
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url(../images/hero/hero_mob@2x.jpg);
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero/hero_mob@2x.jpg);
   }
 }
 
 @media screen and (min-width: 768px) {
   .hero {
-    max-width: 768px;
-    background-image: url(../images/hero/hero_tab.jpg), -webkit-gradient(linear, left top, left bottom, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4)));
-    background-image: url(../images/hero/hero_tab.jpg), linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4));
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url(../images/hero/hero_tab.jpg);
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero/hero_tab.jpg);
   }
 }
 
 @media screen and (min-width: 768px) and (min-device-pixel-ratio: 2), screen and (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 768px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (min-resolution: 2dppx) {
   .hero {
-    background-image: url(../images/hero/hero_tab@2x.jpg), -webkit-gradient(linear, left top, left bottom, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4)));
-    background-image: url(../images/hero/hero_tab@2x.jpg), linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4));
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url(../images/hero/hero_tab@2x.jpg);
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero/hero_tab@2x.jpg);
   }
 }
 
@@ -825,15 +823,15 @@ img {
     padding-bottom: 200px;
     max-width: 1600px;
     min-height: 600px;
-    background-image: url(../images/hero/hero_desk.jpg), -webkit-gradient(linear, left top, left bottom, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4)));
-    background-image: url(../images/hero/hero_desk.jpg), linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4));
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url(../images/hero/hero_desk.jpg);
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero/hero_desk.jpg);
   }
 }
 
 @media screen and (min-width: 1200px) and (min-device-pixel-ratio: 2), screen and (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 2), screen and (min-width: 1200px) and (min-resolution: 192dpi), screen and (min-width: 1200px) and (min-resolution: 2dppx) {
   .hero {
-    background-image: url(../images/hero/hero_desk@2x.jpg), -webkit-gradient(linear, left top, left bottom, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4)));
-    background-image: url(../images/hero/hero_desk@2x.jpg), linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4));
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(47, 48, 58, 0.4)), to(rgba(47, 48, 58, 0.4))), url(../images/hero/hero_desk@2x.jpg);
+    background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/hero/hero_desk@2x.jpg);
   }
 }
 
@@ -894,7 +892,8 @@ img {
   -webkit-transform: translate(-50%, -50%) scale(1);
           transform: translate(-50%, -50%) scale(1);
   padding: 40px;
-  height: 609px;
+  overflow-y: auto;
+  max-height: calc(100vh - 20px);
   text-align: left;
   background-color: #FFFFFF;
   -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -908,13 +907,15 @@ img {
 
 @media screen and (max-width: 479px) {
   .modal {
-    width: 100%;
+    width: calc(100% - 20px);
   }
 }
 
 @media screen and (min-width: 480px) {
   .modal {
     min-width: 450px;
+    height: calc(100vh - 20px);
+    max-height: 609px;
   }
 }
 
@@ -922,6 +923,7 @@ img {
   .modal {
     min-width: 528px;
     height: 581px;
+    max-height: 581px;
   }
 }
 
@@ -1697,11 +1699,17 @@ img {
 
 .overlay {
   position: absolute;
-  padding: 63px 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 24px;
   width: 100%;
   height: 100%;
   opacity: 0;
-  font-size: 18px;
+  font-size: 14px;
   line-height: 1.56;
   letter-spacing: 0.03em;
   color: #FFFFFF;
@@ -1712,6 +1720,26 @@ img {
   transition: opacity var(--transition-duration) var(--cubic-bezier), -webkit-transform var(--transition-duration) var(--cubic-bezier);
   transition: transform var(--transition-duration) var(--cubic-bezier), opacity var(--transition-duration) var(--cubic-bezier);
   transition: transform var(--transition-duration) var(--cubic-bezier), opacity var(--transition-duration) var(--cubic-bezier), -webkit-transform var(--transition-duration) var(--cubic-bezier);
+}
+
+@media screen and (min-width: 480px) {
+  .overlay {
+    display: block;
+    padding: 77px 24px;
+    font-size: 18px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .overlay {
+    padding: 49px 24px 77px 24px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .overlay {
+    padding: 63px 24px;
+  }
 }
 
 .project-description {
